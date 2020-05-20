@@ -7,7 +7,7 @@ package simonadimitrova.electricitycompany.model.configuration;
 
 import org.hibernate.HibernateError;
 import org.hibernate.Session;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;
 import simonadimitrova.electricitycompany.model.entities.*;
 
@@ -25,7 +25,7 @@ public class HibernateUtil {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml)
             // config file.
-            AnnotationConfiguration configuration = new AnnotationConfiguration()
+            Configuration configuration = new Configuration()
                     .addAnnotatedClass(Client.class)
                     .addAnnotatedClass(ClientMeasurement.class)
                     .addAnnotatedClass(ClientPrice.class)
