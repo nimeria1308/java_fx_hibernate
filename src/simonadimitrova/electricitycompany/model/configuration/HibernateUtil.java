@@ -5,6 +5,7 @@
  */
 package simonadimitrova.electricitycompany.model.configuration;
 
+import org.hibernate.HibernateError;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 
@@ -32,5 +33,9 @@ public class HibernateUtil {
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
+    }
+
+    public static Session openSession() throws HibernateError {
+        return sessionFactory.openSession();
     }
 }
