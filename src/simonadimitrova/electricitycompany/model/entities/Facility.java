@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author nimer
  */
 @Entity
-@Table(name = "client")
+@Table(name = "facility")
 public class Facility {
 
     @Id
@@ -28,6 +28,6 @@ public class Facility {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "facility_id")
+    @OneToMany(mappedBy = "facility")
     private List<FacilityExpense> expenses;
 }

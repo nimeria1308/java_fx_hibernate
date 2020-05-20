@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author nimer
  */
 @Entity
-@Table(name = "client")
+@Table(name = "employee")
 public class Employee {
 
     @Id

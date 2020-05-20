@@ -36,6 +36,6 @@ public class Client {
     @Column(name = "client_type", nullable = false)
     private Type clientType;
 
-    @OneToMany(mappedBy = "client_id")
+    @OneToMany(mappedBy = "client")
     private List<ClientMeasurement> measurements;
 }

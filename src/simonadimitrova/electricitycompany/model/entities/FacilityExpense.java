@@ -14,6 +14,8 @@ import javax.validation.constraints.*;
  *
  * @author nimer
  */
+@Entity
+@Table(name = "facility_expense")
 public class FacilityExpense {
 
     @Id
