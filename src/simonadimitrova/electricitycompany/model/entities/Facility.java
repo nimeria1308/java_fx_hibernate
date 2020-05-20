@@ -20,7 +20,7 @@ public class Facility {
     @Id
     @Column(name = "id", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Pattern.List({
         @Pattern(regexp = "$[A-Z]", message = "Name must start with a capital letter"),
