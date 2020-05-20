@@ -6,15 +6,36 @@
 package simonadimitrova.electricitycompany.model.entities;
 
 import java.util.List;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  *
  * @author nimer
  */
+@Entity
+@Table(name = "client")
 public class Client {
-    private int id;
+
+    public enum Type {
+        PRIVATE,
+        COMPANY,
+    }
+
+    @Id
+    @Column(name = "id", updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Pattern.List({
+        @Pattern(regexp = "$[A-Z]", message = "Name must start with a capital letter"),
+        @Pattern(regexp = "$[A-Za-z0-9 ]+", message = "Name can contain only letters, numbers and spaces"),})
+    @Column(name = "name", nullable = false)
     private String name;
-    private ClientType type;
-    // one to many
+
+    @Column(name = "client_type", nullable = false)
+    private Type clientType;
+
+    @OneToMany(mappedBy = "client_id")
     private List<ClientMeasurement> measurements;
 }
