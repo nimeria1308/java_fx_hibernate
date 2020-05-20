@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simonadimitrova.electricitycompany.model.facilities;
+package simonadimitrova.electricitycompany.model.entities;
 
 import java.util.List;
 
@@ -15,5 +15,5 @@ public class Facility {
     private int id;
     private String name;
     // one to many
-    private List<Expense> expenses;
+    private List<FacilityExpense> expenses;
 }

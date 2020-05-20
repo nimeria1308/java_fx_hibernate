@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simonadimitrova.electricitycompany.model.clients;
+package simonadimitrova.electricitycompany.model.entities;
+
+import java.util.Date;
 
 /**
  *
  * @author nimer
  */
-public class Price {
+public class FacilityExpense {
     private int id;
-    private ClientType type;
-    private double price; // per KWh
+    // one to one
+    private Facility facility;
+    private Date date;
+    private double value; // in BGN
 }

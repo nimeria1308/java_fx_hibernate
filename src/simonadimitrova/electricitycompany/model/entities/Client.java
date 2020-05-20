@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simonadimitrova.electricitycompany.model.clients;
+package simonadimitrova.electricitycompany.model.entities;
 
-import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author nimer
  */
-public class Measurement {
+public class Client {
     private int id;
-    // one to one
-    private Client client;
-    private Date date;
-    private double measurement; // in KWh
+    private String name;
+    private ClientType type;
+    // one to many
+    private List<ClientMeasurement> measurements;
 }

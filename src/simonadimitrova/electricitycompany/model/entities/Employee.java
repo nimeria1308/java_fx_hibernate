@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simonadimitrova.electricitycompany.model.clients;
+package simonadimitrova.electricitycompany.model.entities;
 
 /**
  *
  * @author nimer
  */
-public enum ClientType {
-    PRIVATE,
-    COMPANY,
+public class Employee {
+    private int id;
+    private String name;
+    private double salary; // in BGN
 }
