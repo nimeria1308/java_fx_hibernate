@@ -6,7 +6,7 @@
 package simonadimitrova.electricitycompany.model.entities;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -29,7 +29,7 @@ public class ClientMeasurement {
 
     @Past(message = "date must be in the past")
     @Column(name = "measurement_date", nullable = false)
-    private LocalDateTime date;
+    private Date date;
 
     @DecimalMin(value = "0", message = "measurement value must be positive")
     @Digits(integer = 5, fraction = 3, message = "measurement value must be of the format XXXXX.YYY")
