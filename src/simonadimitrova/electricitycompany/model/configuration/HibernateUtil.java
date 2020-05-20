@@ -32,7 +32,7 @@ public class HibernateUtil {
                     .addAnnotatedClass(Employee.class)
                     .addAnnotatedClass(Facility.class)
                     .addAnnotatedClass(FacilityExpense.class)
-                    .configure(HibernateUtil.class.getResource("hibernate.cfg.xml"));
+                    .configure(ConfigurationUrlUtil.URL);
             sessionFactory = configuration.buildSessionFactory();
         } catch (Throwable ex) {
             // Log the exception.
