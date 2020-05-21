@@ -16,13 +16,13 @@ public class Employee {
     private long id;
 
     @Pattern.List({
-            @Pattern(regexp = "$[A-Z]", message = "Name must start with a capital letter"),
-            @Pattern(regexp = "$[A-Za-z ]+", message = "Name can contain only letters and spaces"),})
+            @Pattern(regexp = "^[A-Z].*", message = "Name must start with a capital letter"),
+            @Pattern(regexp = "[A-Za-z ]+", message = "Name can contain only letters and spaces"),})
     @Column(name = "name", nullable = false)
     private String name;
 
-    @DecimalMin(value = "610.00", message = "price value must be greater than zero")
-    @Digits(integer = 5, fraction = 3, message = "price value must be of the format XXXXX.YYY")
+    @DecimalMin(value = "610.00", message = "salary must be at least the minimum salary in Bulgaria (610 BGN)")
+    @Digits(integer = 5, fraction = 3, message = "salary must be of the format XXXXX.YYY")
     @Column(name = "salary", nullable = false)
     private BigDecimal salary; // in BGN
 
