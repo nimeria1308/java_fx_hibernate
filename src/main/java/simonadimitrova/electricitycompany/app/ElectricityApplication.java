@@ -13,7 +13,7 @@ public class ElectricityApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/MainController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/main.fxml"));
 
         Scene scene = new Scene(root);
 
