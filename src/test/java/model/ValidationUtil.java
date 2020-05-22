@@ -8,7 +8,6 @@ import javax.validation.Validation;
 import javax.validation.ValidationException;
 import javax.validation.ValidatorFactory;
 import java.util.Set;
-import java.util.logging.Logger;
 
 public class ValidationUtil {
 
@@ -18,7 +17,7 @@ public class ValidationUtil {
         Set<ConstraintViolation<T>> violations = FACTORY.getValidator().validate(value);
 
         for (ConstraintViolation<T> violation : violations) {
-            Logger.getLogger("test").severe(violation.getMessage());
+            System.out.println(violation.getMessage());
         }
 
         if (!violations.isEmpty()) {
