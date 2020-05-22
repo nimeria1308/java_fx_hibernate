@@ -4,7 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,20 +19,21 @@ import simonadimitrova.electricitycompany.model.entities.Employee;
 import javax.persistence.Table;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import java.io.IOException;
 import java.math.BigDecimal;
 
 public class EmployeesController {
     @FXML
-    private TableView table;
+    private TableView<Employee> table;
 
     @FXML
-    private TableColumn idColumn;
+    private TableColumn<Employee, Long> idColumn;
 
     @FXML
-    private TableColumn nameColumn;
+    private TableColumn<Employee, String> nameColumn;
 
     @FXML
-    private TableColumn salaryColumn;
+    private TableColumn<Employee, BigDecimal> salaryColumn;
 
     @FXML
     private void initialize() {
@@ -41,7 +45,7 @@ public class EmployeesController {
         idColumn.setCellValueFactory(new PropertyValueFactory<Employee, Long>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Employee, String>("name"));
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        salaryColumn.setCellValueFactory(new PropertyValueFactory<Employee, Double>("salary"));
+        salaryColumn.setCellValueFactory(new PropertyValueFactory<Employee, BigDecimal>("salary"));
         salaryColumn.setCellFactory(TextFieldTableCell.<Employee, BigDecimal>forTableColumn(new BigDecimalStringConverter()));
         table.setItems(employees);
     }
@@ -69,7 +73,12 @@ public class EmployeesController {
 
     @FXML
     private void onNew(ActionEvent event) {
-        System.out.println("New");
+        NewEmployeeController.NewDialog dialog = new NewEmployeeController.NewDialog();
+        dialog.showAndWait();
+        Employee employee = dialog.getResult();
+        if (employee != null) {
+            table.getItems().add(employee);
+        }
     }
 
     @FXML
