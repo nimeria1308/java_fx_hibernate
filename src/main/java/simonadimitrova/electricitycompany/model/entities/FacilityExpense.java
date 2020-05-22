@@ -25,7 +25,6 @@ public class FacilityExpense {
     private Date date;
 
     @DecimalMin(value = "1", message = "expense must be positive")
-    @Digits(integer = 5, fraction = 3, message = "price value must be of the format XXXXX.YYY")
     @Column(name = "value", nullable = false)
     private BigDecimal value; // in BGN
 }

@@ -22,7 +22,6 @@ public class Employee {
     private String name;
 
     @DecimalMin(value = "610.00", message = "salary must be at least the minimum salary in Bulgaria (610 BGN)")
-    @Digits(integer = 5, fraction = 3, message = "salary must be of the format XXXXX.YYY")
     @Column(name = "salary", nullable = false)
     private BigDecimal salary; // in BGN
 

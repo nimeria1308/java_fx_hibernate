@@ -8,22 +8,33 @@ import java.util.List;
 @Table(name = "client")
 public class Client {
 
+    public enum Type {
+        PRIVATE,
+        COMPANY,
+    }
+
     @Id
     @Column(name = "id", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Pattern.List({
             @Pattern(regexp = "$[A-Z]", message = "Name must start with a capital letter"),
             @Pattern(regexp = "$[A-Za-z0-9 ]+", message = "Name can contain only letters, numbers and spaces"),})
+
     @Column(name = "name", nullable = false)
     private String name;
+
     @Column(name = "client_type", nullable = false)
     private Type clientType;
+
     @OneToMany(mappedBy = "client")
     private List<ClientMeasurement> measurements;
 
-    public enum Type {
-        PRIVATE,
-        COMPANY,
+    public Client() {
+    }
+
+    public Client(String name, Type type) {
+
     }
 }
