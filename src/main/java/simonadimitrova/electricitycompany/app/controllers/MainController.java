@@ -7,12 +7,12 @@ import javafx.scene.control.Alert;
 
 public class MainController {
     @FXML
-    public void onExit(ActionEvent event) {
+    private void onExit(ActionEvent event) {
         Platform.exit();
     }
 
     @FXML
-    public void onAbout(ActionEvent event) {
+    private void onAbout(ActionEvent event) {
         new Alert(Alert.AlertType.INFORMATION, "Copyright (c) Simona Dimitrova").showAndWait();
     }
 }
