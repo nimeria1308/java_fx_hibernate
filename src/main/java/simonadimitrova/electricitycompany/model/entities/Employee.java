@@ -29,8 +29,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(long id, String name, BigDecimal salary) {
-        this.id = id;
+    public Employee(String name, BigDecimal salary) {
         this.name = name;
         this.salary = salary;
     }
@@ -57,5 +56,10 @@ public class Employee {
 
     public void setSalary(BigDecimal salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Employee {id=%d name=%s salary=%s BGN", id, name, salary);
     }
 }
