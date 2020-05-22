@@ -5,6 +5,7 @@ import org.hibernate.Transaction;
 import simonadimitrova.electricitycompany.model.configuration.HibernateUtil;
 import simonadimitrova.electricitycompany.model.entities.Employee;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class EmployeeDAO {
@@ -61,6 +62,12 @@ public class EmployeeDAO {
             Transaction transaction = session.beginTransaction();
             session.delete(employee);
             transaction.commit();
+        }
+    }
+
+    public static BigDecimal sumSalaries() {
+        try (Session session = HibernateUtil.openSession()) {
+            return session.createQuery("SELECT SUM(salary) FROM Employee employee", BigDecimal.class).getSingleResult();
         }
     }
 }
