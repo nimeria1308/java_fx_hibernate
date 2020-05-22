@@ -1,9 +1,6 @@
 package model;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.junit.Test;
-import simonadimitrova.electricitycompany.model.configuration.HibernateUtil;
 import simonadimitrova.electricitycompany.model.dao.EmployeeDAO;
 import simonadimitrova.electricitycompany.model.entities.Employee;
 
@@ -38,12 +35,12 @@ public class EmployeeTest {
         EmployeeDAO.saveOrUpdate(e);
 
         // List all employees
-        EmployeeDAO.get().stream().forEach((em) -> System.out.println(em));
+        EmployeeDAO.getAll().stream().forEach((em) -> System.out.println(em));
 
         // delete the second employee
         EmployeeDAO.delete(e);
 
         // List all employees
-        EmployeeDAO.get().stream().forEach((em) -> System.out.println(em));
+        EmployeeDAO.getAll().stream().forEach((em) -> System.out.println(em));
     }
 }

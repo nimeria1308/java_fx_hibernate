@@ -50,7 +50,7 @@ public class EmployeeDAO {
         }
     }
 
-    public static List<Employee> get() {
+    public static List<Employee> getAll() {
         try (Session session = HibernateUtil.openSession()) {
             return session.createQuery("FROM simonadimitrova.electricitycompany.model.entities.Employee", Employee.class).list();
         }
