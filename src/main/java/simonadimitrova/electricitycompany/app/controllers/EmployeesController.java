@@ -2,6 +2,7 @@ package simonadimitrova.electricitycompany.app.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
@@ -63,6 +64,21 @@ public class EmployeesController {
             new Alert(Alert.AlertType.ERROR, message).showAndWait();
             employee.setName(oldName);
             table.getItems().set(selectionModel.getSelectedIndex(), employee);
+        }
+    }
+
+    @FXML
+    private void onNew(ActionEvent event) {
+        System.out.println("New");
+    }
+
+    @FXML
+    private void onDelete(ActionEvent event) {
+        TableView.TableViewSelectionModel<Employee> selectionModel = table.getSelectionModel();
+        Employee employee = selectionModel.getSelectedItem();
+        if (employee != null) {
+            EmployeeDAO.delete(employee);
+            table.getItems().remove(employee);
         }
     }
 
