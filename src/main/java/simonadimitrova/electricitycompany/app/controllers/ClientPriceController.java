@@ -5,7 +5,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
 import simonadimitrova.electricitycompany.model.dao.ClientPriceDAO;
 import simonadimitrova.electricitycompany.model.entities.Client;
 import simonadimitrova.electricitycompany.model.entities.ClientPrice;

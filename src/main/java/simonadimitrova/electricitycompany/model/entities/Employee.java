@@ -2,7 +2,6 @@ package simonadimitrova.electricitycompany.model.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.Pattern;
 import java.math.BigDecimal;
 

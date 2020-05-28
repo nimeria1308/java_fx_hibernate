@@ -30,11 +30,4 @@ public class Client {
 
     @OneToMany(mappedBy = "client")
     private List<ClientMeasurement> measurements;
-
-    public Client() {
-    }
-
-    public Client(String name, Type type) {
-
-    }
 }

@@ -1,12 +1,8 @@
 package simonadimitrova.electricitycompany.model.entities;
 
-import simonadimitrova.electricitycompany.model.dao.ClientPriceDAO;
-
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Table(name = "client_price")
@@ -56,4 +52,3 @@ public class ClientPrice {
         this.value = value;
     }
 }
-

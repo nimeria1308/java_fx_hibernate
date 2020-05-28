@@ -2,8 +2,7 @@ package simonadimitrova.electricitycompany.model.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -20,7 +19,7 @@ public class FacilityExpense {
     @JoinColumn(name = "facility_id", updatable = false, nullable = false)
     private Facility facility;
 
-    @Past(message = "date must be in the past")
+    @PastOrPresent(message = "date cannot be in the future")
     @Column(name = "expense_date", nullable = false)
     private Date date;
 

@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,10 +13,8 @@ import javafx.util.converter.BigDecimalStringConverter;
 import simonadimitrova.electricitycompany.model.dao.EmployeeDAO;
 import simonadimitrova.electricitycompany.model.entities.Employee;
 
-import javax.persistence.Table;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import java.io.IOException;
 import java.math.BigDecimal;
 
 public class EmployeesController {
