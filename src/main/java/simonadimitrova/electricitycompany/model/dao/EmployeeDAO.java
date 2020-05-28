@@ -67,7 +67,11 @@ public class EmployeeDAO {
 
     public static BigDecimal sumSalaries() {
         try (Session session = HibernateUtil.openSession()) {
-            return session.createQuery("SELECT SUM(salary) FROM Employee employee", BigDecimal.class).getSingleResult();
+            BigDecimal result = session.createQuery("SELECT SUM(salary) FROM Employee employee", BigDecimal.class).getSingleResult();
+            if (result == null) {
+                return new BigDecimal(0);
+            }
+            return result;
         }
     }
 }
